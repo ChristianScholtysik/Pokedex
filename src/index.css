@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url("/public/fonts/pokemon/Pokemon\ Solid.ttf");
+}
+
+h1 {
+  font-family: "Pokemon";
+  color: yellow;
+  font-size: 6rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(60, 144, 203);
+}
