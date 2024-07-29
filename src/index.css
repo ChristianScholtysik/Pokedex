@@ -14,3 +14,14 @@ h1 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(60, 144, 203);
 }
+
+.card-wrapper {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 15vh;
+}
