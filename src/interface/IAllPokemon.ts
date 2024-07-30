@@ -2,10 +2,10 @@ export interface IAllPokemon {
   count: number;
   next: string;
   previous: null;
-  results: Result[];
+  results: IResult[];
 }
 
-export interface Result {
+export interface IResult {
   name: string;
   url: string;
 }

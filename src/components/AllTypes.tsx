@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Types.css";
+import Header from "./Header/Header";
 
 interface ITypeOverview {
   count: number;
@@ -32,6 +33,7 @@ const AllTypes = () => {
 
   return (
     <>
+      <Header />
       <div className="type-wrapper">
         {types ? (
           <div>

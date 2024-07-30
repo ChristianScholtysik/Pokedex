@@ -1,12 +1,12 @@
-import Overview from "../components/Overview/OverviewPage";
-import Types from "../components/AllTypes";
+import Header from "../components/Header/Header";
+import Hero from "../components/Hero/Hero";
 
 const Home = () => {
   return (
-    <>
-      <h1>Pokemon</h1>
-      <Types />
-    </>
+    <section className="home-wrapper bg-cover bg-center  ">
+      <Header />
+      <Hero />
+    </section>
   );
 };
 

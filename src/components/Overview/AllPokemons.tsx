@@ -1,28 +1,47 @@
-import { useEffect, useState } from "react";
+// import { useContext } from "react";
 
+// import SinglePokemon from "./SinglePokemon";
+// import { PokemonContext } from "../../context/PokemonContext";
+
+// const AllPokemon = () => {
+//   const pokemonContext = useContext(PokemonContext);
+
+//   console.log(pokemonContext);
+//   if (pokemonContext?.allPokemon === null) {
+//     return <h1>Loading...</h1>;
+//   }
+//   return (
+//     <section className="allPokemon">
+//       <h1>All Pokemons:</h1>
+//       {pokemonContext?.allPokemon.results.map((item, index) => (
+//         <SinglePokemon key={index} item={item} />
+//       ))}
+//     </section>
+//   );
+// };
+
+// export default AllPokemon;
+import { useContext } from "react";
+import { PokemonContext } from "../../context/PokemonContext";
 import SinglePokemon from "./SinglePokemon";
 
-import { IAllPokemon } from "../../interface/IAllPokemon";
+const AllPokemon = () => {
+  const pokemonContext = useContext(PokemonContext);
 
-const AllPokemons = () => {
-  const [pokeData, setPokeData] = useState<IAllPokemon | null>(null);
+  console.log(pokemonContext);
 
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
-      .then((res) => res.json())
-      .then((data) => setPokeData(data))
-      .catch((err) => console.error("Fetch failed", err));
-  }, []);
-
+  if (pokemonContext?.allPokemon === null) {
+    return <h1>Loading...</h1>;
+  }
   return (
-    <>
-      <section className="list">
-        {pokeData?.results.map((pokemon, index) => (
-          <SinglePokemon key={index} pokemon={pokemon} />
-        ))}
-      </section>
-    </>
+    <section className="allPokemon">
+      <h1>All Pokemons</h1>
+
+      {pokemonContext?.allPokemon.results.map((item, index) => (
+        <SinglePokemon key={index} item={item} />
+      ))}
+    </section>
   );
 };
 
-export default AllPokemons;
+export default AllPokemon;
